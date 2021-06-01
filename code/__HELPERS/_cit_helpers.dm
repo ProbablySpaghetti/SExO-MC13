@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 //DANGER | DEBUG PROCS//
 ////////////////////////
 
-/*client/proc/give_humans_genitals()
+/client/proc/give_humans_genitals()
 	set name = "Mass Give Genitals"
 	set category = "Dangerous"
 	set desc = "Gives every human mob genitals for testing purposes. WARNING: NOT FOR LIVE SERVER USAGE!!"
@@ -66,10 +66,9 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 	message_admins("[src] gave everyone genitals.")
 	for(var/mob/living/carbon/human/H in GLOB.mob_list)
 		if(H.gender == MALE)
-			H.give_genital(/obj/item/organ/genital/penis)
-			H.give_genital(/obj/item/organ/genital/testicles)
+			H.give_genital(/datum/internal_organ/genital/penis)
+			H.give_genital(/datum/internal_organ/genital/testicles)
 		else
-			H.give_genital(/obj/item/organ/genital/vagina)
-			H.give_genital(/obj/item/organ/genital/womb)
-			H.give_genital(/obj/item/organ/genital/breasts)
-*/
+			H.give_genital(/datum/internal_organ/genital/vagina)
+			H.give_genital(/datum/internal_organ/genital/womb)
+			H.give_genital(/datum/internal_organ/genital/breasts)

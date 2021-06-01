@@ -200,9 +200,9 @@
 		give_genital(/datum/internal_organ/genital/penis)
 		give_genital(/datum/internal_organ/genital/testicles)
 	else
-		give_genital(/datum/internal_organ/genital/breasts)
-		give_genital(/datum/internal_organ/genital/womb)
 		give_genital(/datum/internal_organ/genital/vagina)
+		give_genital(/datum/internal_organ/genital/womb)
+		give_genital(/datum/internal_organ/genital/breasts)
 
 
 /mob/living/carbon/human/proc/give_genital(datum/internal_organ/genital/G)
