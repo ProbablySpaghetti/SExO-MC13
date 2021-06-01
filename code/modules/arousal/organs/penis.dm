@@ -29,4 +29,3 @@
 	var/round_L = round(length)
 	var/round_D = round(diameter)
 	return "<span class='notice'>You see [aroused_state ? "an erect" : "a flaccid"] [lowershape] [name]. You estimate it's about [round_L] inch[round_L != 1 ? "es" : ""] long and [round_D] inch[round_D != 1 ? "es" : ""] in diameter.</span>"
-	
