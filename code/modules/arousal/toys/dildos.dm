@@ -135,7 +135,7 @@
 /obj/item/dildo/suicide_act(mob/living/user)
 //	is_knotted = ((src.dildo_shape == "knotted")?"They swallowed the knot":"Their face is turning blue")
 	user.visible_message("<span class='danger'>[user] tears-up and gags as they shove [src] down their throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(get_turf(user), 'modular_skyrat/sound/weapons/gagging.ogg', 50, TRUE)
+	playsound(loc, 'modular_skyrat/sound/weapons/gagging.ogg', 50, TRUE)
 	if(do_after(user, 17, target = src))
 		user.Stun(150)
 		user.adjust_blurriness(10)
@@ -144,7 +144,7 @@
 
 /obj/item/dildo/flared/huge/suicide_act(mob/living/user)
 	user.visible_message("<span class='danger'>[user] tears-up and gags as they try to deepthroat the [src]! WHY WOULD THEY DO THAT? It looks like [user.p_theyre()] trying to commit suicide!!</span>")
-	playsound(get_turf(user), 'modular_skyrat/sound/weapons/gagging.ogg', 50, TRUE)
+	playsound(loc, 'modular_skyrat/sound/weapons/gagging.ogg', 50, TRUE)
 	if(do_after(user, 35, target = src))
 		user.Stun(300)
 		user.adjust_blurriness(10)

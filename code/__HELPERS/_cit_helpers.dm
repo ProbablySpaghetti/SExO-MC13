@@ -36,6 +36,13 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 		))
 
 /mob/living/carbon/proc/is_groin_exposed(list/L)
+	// Underwear
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(H.underwear > 1) // 1 is naked, anything higher is covered
+			return FALSE
+
+	// Clothing
 	if(!L)
 		L = get_equipped_items()
 	for(var/A in L)
@@ -45,6 +52,13 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 	return TRUE
 
 /mob/living/carbon/proc/is_chest_exposed(list/L)
+	// Underwear
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(H.undershirt > 1 || H.underwear > 1) // Same as above
+			return FALSE
+
+	// Clothing
 	if(!L)
 		L = get_equipped_items()
 	for(var/A in L)

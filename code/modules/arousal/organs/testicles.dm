@@ -19,6 +19,11 @@
 
 	var/size_name = "average"
 
+/datum/internal_organ/genital/testicles/upon_link()
+	size = linked_organ.size
+	update_size()
+	update_appearance()
+
 /datum/internal_organ/genital/testicles/update_size()
 	switch(size)
 		if(BALLS_SIZE_MIN)

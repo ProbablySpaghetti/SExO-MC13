@@ -77,8 +77,8 @@
 
 	if(owner)
 		if(rounded_length > rounded_prev_length)
-			to_chat(owner, "<span class='warning'>Your [pick(GLOB.dick_nouns)] [pick("swells up to", "flourishes into", "expands into", "bursts forth into", "grows eagerly into", "amplifys into")] a [round(length, 0.1)] inch penis.</b></span>")
+			to_chat(owner, "<span class='notice'>Your [pick(GLOB.dick_nouns)] [pick("swells up to", "flourishes into", "expands into", "bursts forth into", "grows eagerly into", "amplifys into")] a [round(length, 0.1)] inch penis.</b></span>")
 		else if((rounded_length < rounded_prev_length) && length > 0.5)
-			to_chat(owner, "<span class='warning'>Your [pick(GLOB.dick_nouns)] [pick("shrinks down to", "decreases into", "diminishes into", "deflates into", "shrivels regretfully into", "contracts into")] a [round(length, 0.1)] inch penis.</b></span>")
+			to_chat(owner, "<span class='notice'>Your [pick(GLOB.dick_nouns)] [pick("shrinks down to", "decreases into", "diminishes into", "deflates into", "shrivels regretfully into", "contracts into")] a [round(length, 0.1)] inch penis.</b></span>")
 
 	diameter = length * diameter_ratio //Is it just me or is this ludicous, why not make it exponentially decay?
