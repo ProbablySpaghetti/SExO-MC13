@@ -743,3 +743,25 @@
 		S = new(T)
 	//if(data["blood_DNA"])
 		//S.add_blood_DNA(list("color" = data["bloodcolor"], data["blood_DNA"] = data["blood_type"]))
+
+/datum/reagent/phenol
+	name = "Phenol"
+	description = "An aromatic ring of carbon with a hydroxyl group. A useful precursor to some medicines, but has no healing properties on its own."
+	reagent_state = LIQUID
+	taste_description = "sweet and tarry" //Again, not a strong acid.
+	//pH = 5.5
+	color = "#e6e8ff"
+
+/datum/reagent/acetone
+	name = "Acetone"
+	description = "A slick, slightly carcinogenic liquid. Has a multitude of mundane uses in everyday life."
+	reagent_state = LIQUID
+	taste_description = "solvent"//It's neutral though..?
+	color = "#e6e6e6"
+
+/datum/reagent/oil
+	name = "Oil"
+	description = "Burns in a small smoky fire, mostly used to get Ash."
+	reagent_state = LIQUID
+	color = "#292929"
+	taste_description = "oil"
