@@ -79,6 +79,8 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 		if(!locate(/datum/internal_organ/genital) in H.internal_organs)
 			H.give_genitals(TRUE)
 			to_chat(src, "<span class='notice'>Genitals given!</span>")
+		else
+			to_chat(src, "<span class='warning'>You've already got genitals!</span>")
 
 /client/proc/give_humans_genitals()
 	set name = "Mass Give Genitals"
