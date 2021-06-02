@@ -57,18 +57,21 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 //DANGER | DEBUG PROCS//
 ////////////////////////
 
+/client/verb/give_genitals()
+	set name = "Give Genitals"
+	set category = "Debug"
+	if(mob && ishuman(mob))
+		var/mob/living/carbon/human/H = mob
+		if(!locate(/datum/internal_organ/genital) in H.internal_organs)
+			H.give_genitals(TRUE)
+			to_chat(src, "<span class='notice'>Genitals given!</span>")
+
 /client/proc/give_humans_genitals()
 	set name = "Mass Give Genitals"
-	set category = "Dangerous"
+	set category = "Debug"
 	set desc = "Gives every human mob genitals for testing purposes. WARNING: NOT FOR LIVE SERVER USAGE!!"
 
 	log_admin("[src] gave everyone genitals.")
 	message_admins("[src] gave everyone genitals.")
 	for(var/mob/living/carbon/human/H in GLOB.mob_list)
-		if(H.gender == MALE)
-			H.give_genital(/datum/internal_organ/genital/penis)
-			H.give_genital(/datum/internal_organ/genital/testicles)
-		else
-			H.give_genital(/datum/internal_organ/genital/vagina)
-			H.give_genital(/datum/internal_organ/genital/womb)
-			H.give_genital(/datum/internal_organ/genital/breasts)
+		H.give_genitals(TRUE)
