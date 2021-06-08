@@ -1351,7 +1351,6 @@
 	use_state_flags = XACT_USE_STAGGERED|XACT_USE_FORTIFIED|XACT_USE_CRESTED //can't use while staggered, defender fortified or crest down
 	keybind_signal = COMSIG_XENOABILITY_REGURGITATE
 	plasma_cost = 100
-	gamemode_flags = ABILITY_HUNT
 
 /datum/action/xeno_action/activable/devour/can_use_ability(atom/A, silent, override_flags)
 	. = ..()
@@ -1359,7 +1358,8 @@
 		return
 	var/mob/living/carbon/xenomorph/X = owner
 	if(LAZYLEN(X.stomach_contents)) //Only one thing in the stomach at a time, please
-		succeed_activate()
+		to_chat(owner, "<span class='warning'>Our stomach is already full!</span>")
+		return FALSE
 	if(!ishuman(A) || issynth(A))
 		to_chat(owner, "<span class='warning'>That wouldn't taste very good.</span>")
 		return FALSE
@@ -1368,10 +1368,10 @@
 		return FALSE
 	if(!owner.Adjacent(victim)) //checks if owner next to target
 		return FALSE
-	if(victim.stat != DEAD)
-		if(!silent)
-			to_chat(owner, "<span class='warning'>This creature is struggling too much for us to devour it.</span>")
-		return FALSE
+	//if(victim.stat != DEAD)
+	//	if(!silent)
+	//		to_chat(owner, "<span class='warning'>This creature is struggling too much for us to devour it.</span>")
+	//	return FALSE
 	if(victim.buckled)
 		if(!silent)
 			to_chat(owner, "<span class='warning'>[victim] is buckled to something.</span>")
