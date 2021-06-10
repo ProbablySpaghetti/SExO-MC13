@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `age_verification` (
   `datetime` datetime NOT NULL,
   `consent` bit(1) NOT NULL,
   PRIMARY KEY (`ckey`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table feedback.ban
